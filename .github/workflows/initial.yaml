@@ -1,0 +1,14 @@
+name: Testing ReusableWorkflow00
+on: 
+  push:
+    branches: 
+      - main
+    paths:
+      - '.github/**'
+
+jobs:
+    call-workflow-passing-data:
+      uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/ReusableWorkflow00.yml@main
+      with:
+        testvar: 'hello world, calling to reusableWorkflow'
+      secrets: inherit
