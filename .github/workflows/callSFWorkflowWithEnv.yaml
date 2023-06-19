@@ -1,0 +1,21 @@
+name: Testing SalesforceWorkflow
+on: 
+  push:
+    branches: 
+      - develop
+    paths:
+      - 'force-app/**'
+
+jobs:
+  call-workflow-using-environment:
+    environment: ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Salesforce workflow
+        uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/sf_workflow01.yml@main
+        with:
+          testvar: 'hello world, calling to sfworkflow01, test01'
+          apiversion: ${{ vars.SF_APIV }}
+          SFORG_USERNAME: ${{ vars.SFORG_USERNAME }}
+          SFORG_URL: ${{ vars.SFORG_URL }}
+          secrets: inherit
