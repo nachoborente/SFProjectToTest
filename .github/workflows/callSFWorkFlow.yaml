@@ -4,7 +4,7 @@ on:
     branches: 
       - develop
     paths:
-      - 'sfapp/**'
+      - 'force-app/**'
 
 jobs:
     call-workflow-passing-data:
