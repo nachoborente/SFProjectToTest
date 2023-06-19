@@ -8,15 +8,15 @@ on:
 
 jobs:
   call-workflow-using-environment:
-      runs-on: ubuntu-latest
-      environment: develop
-  steps:
-    name: call reusable WF
-    uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/sf_workflow01.yml@main
-    with:
-      testvar: 'hello world, calling to sfworkflow01, test01'
-      apiversion: '${{ vars.SF_APIV }}'
-      SFORG_USERNAME: '${{ vars.SFORG_USERNAME }}'
-      SFORG_URL: '${{ vars.SFORG_URL }}'
-    secrets: inherit
+    runs-on: ubuntu-latest
+    environment: develop
+    steps:
+      - name: call reusable WF
+        uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/sf_workflow01.yml@main
+        with:
+          testvar: 'hello world, calling to sfworkflow01, test01'
+          apiversion: '${{ vars.SF_APIV }}'
+          SFORG_USERNAME: '${{ vars.SFORG_USERNAME }}'
+          SFORG_URL: '${{ vars.SFORG_URL }}'
+          secrets: inherit
     
