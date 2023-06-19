@@ -12,7 +12,7 @@ jobs:
     with:
       testvar: 'hello world, calling to sfworkflow01, test01'
       apiversion: '${{ vars.SF_APIV }}'
-      SFORG_USERNAME: '${{ vars.SFORG_USERNAME }}'
-      SFORG_URL: '${{ vars.SFORG_URL }}'
+      #SFORG_USERNAME: '${{ vars.SFORG_USERNAME }}'
+      #SFORG_URL: '${{ vars.SFORG_URL }}'
     secrets: inherit
     
