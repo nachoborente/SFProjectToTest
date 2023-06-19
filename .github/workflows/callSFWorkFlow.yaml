@@ -7,12 +7,20 @@ on:
       - 'force-app/**'
 
 jobs:
-    call-reusable-sfworkflow-:
-      environment: ${{ github.ref_name }}
+  use-environment:
+    name: Call to SF reusable wf
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name }}
+    steps:
+    - name: TestVAriables1
+      run: |
+        echo "repo variable: ${{ var.SFAPIV }}"
+        echo "ENV variable: ${{ var.SFORG_USERNAME }}"
+    - name: call to wf
       uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/sf_workflow01.yml@main
       with:
         testvar: 'hello world, calling to sfworkflow01, test01'
         apiversion: '${{ vars.SF_APIV }}'
         SF_ORG_USERNAME: '${{ vars.SFORG_USERNAME }}'
         SF_ORG_URL: '${{ vars.SFORG_URL }}'
-      secrets: inherit
+        secrets: inherit
