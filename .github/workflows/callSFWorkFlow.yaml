@@ -2,7 +2,7 @@ name: Testing SalesforceWorkFlow
 on: 
   push:
     branches: 
-      - develop
+      - release
     paths:
       - 'force-app/**'
 
