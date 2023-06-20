@@ -2,7 +2,7 @@ name: Testing SalesforceWorkFlow
 on: 
   push:
     branches: 
-      - master
+      - main
 jobs:
   call-workflow-using-environment:
     uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/ReusableWorkflow00.yml@main
