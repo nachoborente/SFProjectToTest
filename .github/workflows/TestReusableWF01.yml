@@ -1,0 +1,13 @@
+name: Testing SalesforceWorkFlow
+on: 
+  push:
+    branches: 
+      - master
+jobs:
+  call-workflow-using-environment:
+    uses: nachoborente/PublicPipelineSharedLibrary/.github/workflows/ReusableWorkflow00.yml@main
+    with:
+      testvar: 'hello world, calling to sfworkflow01, test01'
+      apiversion: '${{ vars.SF_APIV }}'
+    secrets: inherit
+    
